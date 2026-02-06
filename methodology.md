@@ -36,7 +36,7 @@ The advanced feature extraction pipeline extends the baseline features by introd
 
 ### A. Amplitude Envelope Feature Extraction
 
-Let $x[n]$ denote the discrete-time speech signal. The amplitude envelope $A[n]$ is approximated by the absolute value:
+Let $x[n]$ denote the discrete time speech signal. The amplitude envelope $A[n]$ is approximated by the absolute value:
 
 $$
 A[n] = |x[n]|
@@ -133,7 +133,7 @@ These capture asymmetry and tailedness, which can be indicative of unnatural dyn
 
 ### B. Loudness Analysis with Jump Detection
 
-Short-time loudness is estimated using frame-wise RMS energy. For frame index $m$ and hop size $H$ in samples:
+Short time loudness is estimated using frame-wise RMS energy. For frame index $m$ and hop size $H$ in samples:
 
 $$
 L[m] = \sqrt{\frac{1}{H} \sum_{n = mH}^{(m+1)H - 1} x^{2}[n]}
@@ -231,7 +231,7 @@ where $\mathbf{1}$ is the indicator function. The threshold of $2\sigma$ targets
 
 ## 4. Feature Vector Construction
 
-All features are concatenated into a single utterance-level feature vector $\mathbf{F}$:
+All features are concatenated into a single utterance level feature vector $\mathbf{F}$:
 
 $$
 \mathbf{F} = \left\lbrace \text{MFCC} \, \Delta \text{MFCC} \, \Delta\Delta \text{MFCC} \, F_{\text{amp}} \, F_{\text{loud}} \, F_{\text{mod}} \, F_{\text{spec}} \, F_{\text{HPSS}} \, F_{\text{bg/fg}} \right\rbrace
@@ -243,6 +243,5 @@ Where:
 - $F_{\text{loud}}$: Loudness dynamics
 - $F_{\text{mod}}$: Modulation spectrum statistics
 - $F_{\text{bg/fg}}$: Background/Foreground stability metrics
-
 
 The baseline system only uses the MFCC mean vector, while the enhanced system makes use of the complete set of MFCC, temporal, loudness, modulation, spectral,and background/foreground descriptors. For both setups, eight classification models have been tested to confirm that the performance improvements brought by the enhanced features are stable across the board
