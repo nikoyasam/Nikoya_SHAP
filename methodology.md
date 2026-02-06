@@ -222,7 +222,7 @@ $$
 Sudden background changes are counted whenever the frame-to-frame change exceeds a fixed threshold ($2\sigma$):
 
 $$
-N_{\text{bg}} = \sum_{m=1}^{M-1} \mathbf{1}_{\left\{ \big| B_{\text{temp}}[m+1] - B_{\text{temp}}[m] \big| > 2 \sigma_{B_{\text{temp}}} \right\}}
+N_{\text{bg}} = \sum_{m=1}^{M-1} \mathbf{1}_{\big\{ \big| B_{\text{temp}}[m+1] - B_{\text{temp}}[m] \big| > 2 \sigma_{B_{\text{temp}}} \big\}}
 $$
 
 where $\mathbf{1}$ is the indicator function. The threshold of $2\sigma$ targets fluctuations outside the typical 95% confidence interval of background variation.
