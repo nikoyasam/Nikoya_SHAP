@@ -234,11 +234,12 @@ where $\mathbf{1}$ is the indicator function. The threshold of $2\sigma$ targets
 All features are concatenated into a single utterance-level feature vector $\mathbf{F}$:
 
 $$
-\mathbf{F} = \left\lbrace \text{MFCC}, \, \Delta \text{MFCC}, \, \Delta\Delta \text{MFCC}, \, F_{\text{amp}}, \, F_{\text{loud}}, \, F_{\text{mod}}, \, F_{\text{spec}}, \, F_{\text{HPSS}}, \, F_{\text{bg/fg}} \right\rbrace
+\mathbf{F} = \left\lbrace \text{MFCC} \, \Delta \text{MFCC} \, \Delta\Delta \text{MFCC} \, F_{\text{amp}} \, F_{\text{loud}} \, F_{\text{mod}} \, F_{\text{spec}} \, F_{\text{HPSS}} \, F_{\text{bg/fg}} \right\rbrace
 $$
 
 Where:
-* $F_{\text{amp}}$: Amplitude envelope statistics & jumps
-* $F_{\text{loud}}$: Loudness dynamics
-* $F_{\text{mod}}$: Modulation spectrum statistics
-* $F_{\text{bg/fg}}$: Background/Foreground stability metrics
+
+- $F_{\text{amp}}$: Amplitude envelope statistics & jumps
+- $F_{\text{loud}}$: Loudness dynamics
+- $F_{\text{mod}}$: Modulation spectrum statistics
+- $F_{\text{bg/fg}}$: Background/Foreground stability metrics
