@@ -117,6 +117,8 @@ $$
 S_{\text{long}} = \frac{1}{P - 1} \sum_{p=1}^{P-1} \big(A_{\text{long}}[p+1] - A_{\text{long}}[p]\big)
 $$
 
+where $M$ and $P$ denote the lengths of the short and long smoothed sequences, respectively. These slopes summarize gradual rising or falling trends at different temporal scales.
+
 #### Statistical Distribution Features
 
 Higher-order moments of the envelope distribution (Skewness $\gamma_A$ and Kurtosis $\kappa_A$) are also computed:
@@ -131,23 +133,31 @@ These capture asymmetry and tailedness, which can be indicative of unnatural dyn
 
 ### B. Loudness Analysis with Jump Detection
 
-Short-time loudness is estimated using frame-wise RMS energy $L[m]$. Loudness differences between successive frames are computed as:
+Short-time loudness is estimated using frame-wise RMS energy. For frame index $m$ and hop size $H$ in samples:
+
+$$
+L[m] = \sqrt{\frac{1}{H} \sum_{n = mH}^{(m+1)H - 1} x^{2}[n]}
+$$
+
+Loudness differences between successive frames are computed as:
 
 $$
 \Delta L[m] = L[m+1] - L[m]
 $$
 
-Let $\sigma_{\Delta L}$ denote the standard deviation of the sequence $\Delta L[m]$. The number of loudness spikes exceeding a three standard deviation threshold is defined as:
+Let $\sigma_{\Delta L}$ denote the standard deviation of the sequence $\Delta L[m]$. The number of loudness spikes exceeding a three standard deviation threshold is then defined as:
+
+$$
+f(\Delta L[m]) = \begin{cases} \Delta L[m], & \text{if } \Delta L[m] > 3\sigma_{\Delta L}, \\ 0, & \text{otherwise}, \end{cases}
+$$
+
+Then the loudness–spike measure is defined as:
 
 $$
 N_{\text{spike}} = \sum_{m} f(\Delta L[m])
 $$
 
-where the spike function $f$ is:
-
-$$
-f(\Delta L[m]) = \begin{cases} \Delta L[m], & \text{if } \Delta L[m] > 3\sigma_{\Delta L} \\ 0, & \text{otherwise} \end{cases}
-$$
+This separates the definition of frame-level loudness $L[m]$ from the spike count $N_{\text{spike}}$.
 
 ---
 
