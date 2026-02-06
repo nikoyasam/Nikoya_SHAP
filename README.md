@@ -43,7 +43,7 @@ The following plots illustrate the feature importance for LSTM, Bi-LSTM, GRU, an
 ![ANN SHAP Plot](deep_models/ANN_feature_importance.png)
 
 **Observation:**
-The recurrent and feed-forward models depict different, but complementary, patterns. The GRU ranks spectral contrast and short-term amplitude slope highly, focusing on sharp spectral-temporal transitions. The LSTM and Bi-LSTM plots emphasize modulation power statistics and loudness jumps—higher-level cues derived in our pipeline.
+The recurrent and feed-forward models depict different, but complementary, patterns. The GRU ranks spectral contrast and short-term amplitude slope highly, focusing on sharp spectral-temporal transitions. The LSTM and Bi-LSTM plots emphasize modulation power statistics and loudness jumps higher-level cues derived in our pipeline.
 
 **Specific Note on ANN:**
 The ANN plot is largely influenced by the low-order MFCC means, with the envelope range and maximum making up the minor contributions. Thus, the feed-forward network mainly exploits spectral envelope shapes but still benefits from the added temporal descriptors.

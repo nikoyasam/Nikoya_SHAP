@@ -149,7 +149,7 @@ Modulation power is summarized over three modulation frequency bands (0-20 Hz, 2
 Time-frequency structure is analyzed using the magnitude of the Short Time Fourier Transform (STFT), $X(k,m)$. A background estimate for each frequency bin is defined as the 10th percentile of its magnitude over time:
 
 $$
-B_k = \operatorname{percentile}_{10}\big( X(k, m) \big)
+B_k = \mathrm{percentile}_{10}\big( X(k, m) \big)
 $$
 
 A foreground mask separates high energy regions ($X > 2 B_k$). The background-to-foreground energy ratio is computed as:
@@ -218,7 +218,7 @@ The following plots illustrate the feature importance for LSTM, Bi-LSTM, GRU, an
 ![ANN SHAP Plot](deep_models/ANN_feature_importance.png)
 
 **Observation:**
-The recurrent and feed-forward models depict different, but complementary, patterns. The GRU ranks spectral contrast and short-term amplitude slope highly, focusing on sharp spectral-temporal transitions. The LSTM and Bi-LSTM plots emphasize modulation power statistics and loudness jumps—higher-level cues derived in our pipeline.
+The recurrent and feed-forward models depict different, but complementary, patterns. The GRU ranks spectral contrast and short-term amplitude slope highly, focusing on sharp spectral-temporal transitions. The LSTM and Bi-LSTM plots emphasize modulation power statistics and loudness jumps higher level cues derived in our pipeline.
 
 **Specific Note on ANN:**
 The ANN plot is largely influenced by the low-order MFCC means, with the envelope range and maximum making up the minor contributions. Thus, the feed-forward network mainly exploits spectral envelope shapes but still benefits from the added temporal descriptors.
