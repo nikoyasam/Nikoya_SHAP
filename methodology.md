@@ -243,3 +243,6 @@ Where:
 - $F_{\text{loud}}$: Loudness dynamics
 - $F_{\text{mod}}$: Modulation spectrum statistics
 - $F_{\text{bg/fg}}$: Background/Foreground stability metrics
+
+
+The baseline system only uses the MFCC mean vector, while the enhanced system makes use of the complete set of MFCC, temporal, loudness, modulation, spectral,and background/foreground descriptors. For both setups, eight classification models have been tested to confirm that the performance improvements brought by the enhanced features are stable across the board
