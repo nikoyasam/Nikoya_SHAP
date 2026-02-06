@@ -216,13 +216,13 @@ $$
 To characterize temporal stability of the background, a background-only temporal energy trajectory is defined as:
 
 $$
-B_{\text{temp}}[m] = \frac{1}{K} \sum_{k=1}^{K} X(k,m) \, \big( 1 - M_{\text{fg}}(k,m) \big)
+B_{\text{temp}}[m] = \frac{1}{K} \sum_{k=1}^{K} X(k,m) \, \left( 1 - M_{\text{fg}}(k,m) \right)
 $$
 
 Sudden background changes are counted whenever the frame-to-frame change exceeds a fixed threshold ($2\sigma$):
 
 $$
-N_{\text{bg}} = \sum_{m=1}^{M-1} \mathbf{1}_{\big\{ \big| B_{\text{temp}}[m+1] - B_{\text{temp}}[m] \big| > 2 \sigma_{B_{\text{temp}}} \big\}}
+N_{\text{bg}} = \sum_{m=1}^{M-1} \mathbf{1}_{\{ | B_{\text{temp}}[m+1] - B_{\text{temp}}[m] | > 2 \sigma_{B_{\text{temp}}} \}}
 $$
 
 where $\mathbf{1}$ is the indicator function. The threshold of $2\sigma$ targets fluctuations outside the typical 95% confidence interval of background variation.
